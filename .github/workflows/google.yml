@@ -124,10 +124,9 @@ with:
     cache: # optional
     # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
     cache-dependency-path: # optional
-    
-      - name: Setup Go environment
-        uses: actions/setup-go@v3.2.0
-        with:
+    - name: Setup Go environment
+      uses: actions/setup-go@v3.2.0
+      with:
     # The Go version to download (if necessary) and use. Supports semver spec and ranges.
       go-version: # optional
     # Path to the go.mod file.
@@ -144,7 +143,7 @@ with:
         uses: actions/download-artifact@v3.0.0
         with:
     # Artifact name
-      name: # optional
+    name: # optional
     # Destination path
         path: # optional
     
@@ -152,30 +151,29 @@ with:
         uses: actions/first-interaction@v1.1.0
         with:
     # Token for the repository. Can be passed in using {{ secrets.GITHUB_TOKEN }}
-      repo-token: 
+        repo-token: 
     # Comment to post on an individual's first issue
-      issue-message: # optional
+        issue-message: # optional
     # Comment to post on an individual's first pull request
-      pr-message: # optional
+        pr-message: # optional
     
         name: Pull request labeler
         on: [ pull_request_target ]
 
-permissions:
-  contents: read
-  pull-requests: write
-
-  jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Setup .NET Core SDK
-  uses: actions/setup-dotnet@v2.1.0
+    permissions:
+    contents: read
+    pull-requests: write
+  
+    jobs:
+triage:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/labeler@v4
   with:
+repo-token: ${{ secrets.GITHUB_TOKEN }}
+  - name: Setup .NET Core SDK
+uses: actions/setup-dotnet@v2.1.0
+    with:
     # Optional SDK version(s) to use. If not provided, will install global.json version when available. Examples: 2.2.104, 3.1, 3.1.x
     dotnet-version: # optional
     # Optional global.json location, if your global.json isn't located in the root of the repo.
