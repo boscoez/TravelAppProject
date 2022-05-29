@@ -102,7 +102,7 @@ jobs:
     # The chunk size used to split up large files during upload, in bytes
       upload-chunk-size: # optional
       - name: Setup Node.js environment
-      uses: actions/setup-node@v3.2.0
+      uses: actions.github/workflows/setup-node@v3.2.0
       with:
     # Set always-auth in npmrc.
       always-auth: # optional, default is false
