@@ -14,7 +14,7 @@ name: Build and Deploy to GKE
 # events but only for the master branch
 on:
   push:
-    branches: [ master, main/** ]
+    branches: [ master, test/** ]
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -56,10 +56,12 @@ jobs:
         run: npm run build
 
       # Setup gcloud CLI
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - name: Setup GCP
+        uses: google-github-actions/setup-gcloud@master
         with:
-          service_account_email: ${{ secrets.GKE_ALE_FIUBA_EMAIL }}
-          service_account_key: ${{ secrets.GKE_ALE_FIUBA_KEY }}
+          version: latest
+          project_id: ${{ env.PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY_DEV }}
 
       # Configure docker to use the gcloud command-line tool as a credential helper
       - run: |
