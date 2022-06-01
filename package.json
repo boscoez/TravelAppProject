@@ -2,6 +2,6 @@
   "name": "CS446DSN",
   "version": "1.0.0",
   "dependencies": {
-    
+    "applicationinsights": "^2.3.3"
   }
 }
