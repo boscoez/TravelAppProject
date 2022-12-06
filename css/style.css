@@ -1,8 +1,8 @@
 /********** Template CSS **********/
 :root {
-    --primary: #06A3DA;
-    --secondary: #34AD54;
-    --light: #EEF9FF;
+    --primary: #0a337c;
+    --secondary: #30ff00;
+    --light: #30ff00;
     --dark: #091E3E;
 }
 
@@ -277,7 +277,7 @@ h6,
     width: 6px;
     height: 5px;
     bottom: 0px;
-    background: #FFFFFF;
+    background: #30ff00;
     -webkit-animation: section-title-run 5s infinite linear;
     animation: section-title-run 5s infinite linear;
 }
@@ -384,7 +384,7 @@ h6,
 
 .testimonial-carousel .owl-item.center .testimonial-item {
     background: #FFFFFF !important;
-    box-shadow: 0 0 30px #DDDDDD;
+    box-shadow: 0 0 30px #30ff00;
 }
 
 
